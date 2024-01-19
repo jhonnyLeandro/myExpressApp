@@ -1,7 +1,11 @@
-FROM alpine:3.18
+FROM node:18.16.0-alpine3.18
 
-ENV NODE_VERSION 18.19.0
+COPY /myExpressApp .
 
-RUN cd myExpressApp
+WORKDIR myExpressApp
 
-RUN npm install && npm start
+RUN npm install 
+
+EXPOSE 3000
+
+CMD ["npm", "start"]
