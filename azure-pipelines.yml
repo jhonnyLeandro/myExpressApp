@@ -25,6 +25,6 @@ steps:
     azureSubscription: 'Suscripción 1(06822c82-3851-4ffa-8410-f4a224b92590)'
     appType: 'webAppLinux'
     appName: 'webapptest080524'
-    package: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    package: '$(System.DefaultWorkingDirectory)/myExpressApp'
     runtimeStack: 'NODE|18-lts'
     startUpCommand: 'npm start'
