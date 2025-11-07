@@ -70,7 +70,8 @@ jobs:
         with:
           app-name: 'webapptest1234'
           slot-name: 'Production'
-          package: .
+          package: myExpressApp/myExpressApp
 
           
+
 
