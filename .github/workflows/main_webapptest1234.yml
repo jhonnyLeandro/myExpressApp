@@ -86,10 +86,11 @@ jobs:
         uses: azure/webapps-deploy@v3
         with:
           app-name: 'webapptest1234'
-          slot-name: 'Production'
+          slot-name: 'staging'
           package: appdir
 
           
+
 
 
 
