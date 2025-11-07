@@ -56,6 +56,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
+          path: .
+
+      - name: Show what we actually downloaded (debug)
+        run: |
+          pwd
+          ls -la
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -70,8 +76,9 @@ jobs:
         with:
           app-name: 'webapptest1234'
           slot-name: 'Production'
-          package: myExpressApp/myExpressApp
+          package: app.tgz 
 
           
+
 
 
