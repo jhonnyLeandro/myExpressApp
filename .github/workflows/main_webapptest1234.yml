@@ -62,6 +62,17 @@ jobs:
         run: |
           pwd
           ls -la
+
+
+      - name: Find package.json (debug)
+        run: |
+          pwd
+          ls -la
+          echo "---- ./myExpressApp ----"
+          ls -la myExpressApp || true
+          echo "---- search (depth 3) ----"
+          find . -maxdepth 3 -name package.json -type f -print
+
       
       - name: Login to Azure
         uses: azure/login@v2
@@ -79,6 +90,7 @@ jobs:
           package: app.tgz 
 
           
+
 
 
 
