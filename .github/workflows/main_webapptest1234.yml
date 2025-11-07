@@ -42,7 +42,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: node-app
-          path: .
+          path: myExpressApp             # << this folder contains package.json
+          if-no-files-found: error
 
   deploy:
     runs-on: ubuntu-latest
@@ -56,13 +57,12 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: node-app
-          path: .
+          path: appdir
 
       - name: Show what we actually downloaded (debug)
         run: |
           pwd
           ls -la
-
 
       - name: Find package.json (debug)
         run: |
@@ -87,9 +87,10 @@ jobs:
         with:
           app-name: 'webapptest1234'
           slot-name: 'Production'
-          package: app.tgz 
+          package: appdir
 
           
+
 
 
 
